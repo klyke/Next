@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD SHTML 1.0 Transitional//EN"
+    "http://wwww.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+[
+<!ATTLIST tag vidId CDATA #IIMPLIED>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" src="jquery-ui/jquery-ui.min.css">
+    <style>
+
+    ::-webkit-scrollbar
+    {
+        width: 2px;
+        background-color: #4c4c4c;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        background-color: white;
+        width:2px;
+    }
+
+    h4 {
+        color:white;
+        text-align: center;
+        padding-top: 65px;
+        visibility: visible;
+        z-index: 900;
+    }
+
+    .close {
+        position:absolute;
+        float:right;
+        display:inline-block;
+        padding:2px 5px;
+        float:right;
+        width:20px;
+        height:20px;
+    }
+
+
+    .cueItem{
+        display: inline-block;
+        float: left;
+        width: 280px;
+        height: 120px;
+        margin-right: 10px;
+        background: black;
+        opacity: 0.6;
+    }
+
+    .cueItem:hover{
+        /*background: #57574c;*/
+        opacity: 1;
+        cursor:pointer;
+    }
+
+    .cueInfo #thumb {
+        float:left;
+        top: 0px;
+        left: 0px;
+        padding:5px;
+    }
+
+    .cueInfo{
+        width: 100%;
+        height: 90%;
+        
+    }
+
+    .cueInfo #thumbTitle{
+        color: white;
+        padding-left: 2px;
+        padding-top: 5px;
+
+    }
+
+    .closeIcon {
+        float:right;
+        width: 20px;
+        height: 20px;
+        padding:2px;
+        color: white;
+    }
+
+
+    .closeIcon:hover{
+        cursor:pointer;
+        background-color: #3455B2;
+    }
+
+    .wrap{
+        overflow: auto;
+        overflow-y: hidden;
+    }
+
+
+
+    .wrap li{
+        display: inline-block;
+        white-space: normal;
+    }
+
+    #buttonHolder{
+        position: fixed;
+        width: 50px;
+        height: 100%;
+        z-index: 100000;
+        margin-right: 10px;
+        background-color: black;
+        /*padding-right: 5px;*/
+        /*border: 1px solid white;*/
+    }
+
+    #listHolder{
+        position: absolute;
+        margin: 5px;
+        overflow: auto;
+        right:50px;
+        float: none;
+        left:0px;
+    }
+
+
+    #playbtn{
+        color:white;
+    }
+
+    #pausebtn{
+        color: white;
+    }
+
+    .wrap #qVideoHolder{
+        position: relative;
+        display: inline;
+        white-space: nowrap;
+    }
+
+    .iconList{
+        padding: 0px;
+        list-style-type: none;
+        top:0px;
+    }
+
+    .iconList li{
+        width: 100%;
+        text-align: center;
+        color: white;
+        line-height: 40px;       
+    }
+
+    .iconBar{
+        position: absolute;
+        right: 0px;
+        top:0px;
+        height: 100%;
+        width: 50px;
+        background: #3455B2;
+        /*background: #9900CC;*/
+    }
+
+    .myIcon{
+        color:white;
+        font-size: 1.7em;
+        padding: 2px;
+        vertical-align: middle;
+    }
+
+    #down{
+        font-size: 2em;
+    }
+
+    #down:hover{
+        font-size: 2.3em
+    }
+
+    .myIcon:hover{
+        font-size: 2em;
+    }
+
+
+    </style>
+
+
+</head>
+<body>
+
+      <div id="masterDiv" class = "wrap">
+        <h4 id="noVideosText">Drag a video here to get started!</h4>
+        <div class="iconBar">
+            <ul class="iconList">
+                <li><span id="down" class="myIcon fa fa-angle-down"></span></li>
+                <li><span id="clear" class="myIcon fa fa-trash-o"></span></li>
+                <li><span id="shuffle" class = "myIcon fa fa-random"></span></li>
+            </ul>
+        </div>
+
+        <div id="listHolder">
+            <ul id="qVideoHolder" class="sortable">
+            </ul>
+        </div>
+
+    </div>
+
+
+</body>
+
+    </html>

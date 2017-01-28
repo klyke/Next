@@ -1,0 +1,41 @@
+{
+	"manifest_version": 2, 
+	"name":"next", 
+	"version":"1.1.1", 
+	"description":"Create instant YouTube playlists",
+
+	"page_action": {
+		"default_icon": "thumb1.png",
+		"default_title": "next"
+	}, 
+
+	"icons":{
+		"128":"thumb1.png"
+		},
+
+	"background": {
+		"scripts": ["js/background.js", "js/jquery-1.11.3.min.js"]
+	},
+
+	"content_scripts": [
+	{
+		"matches":[
+			"*://*.youtube.com/*"
+		],
+		"js":["js/jquery-1.11.3.min.js", "jquery-ui/jquery-ui.min.js",  "js/contentscript.js", "js/bootstrap.min.js"],
+		"run_at":"document_end"
+	}
+	],
+
+	"permissions": [
+	"tabs",
+	"activeTab",
+	"contextMenus"
+	],
+
+	"web_accessible_resources": 
+	[  
+		"qSideBar.html", 
+		"js/videoWatcher.js", 
+		"close.png"]
+}
